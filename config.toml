@@ -18,9 +18,9 @@ disqusShortname = "yourdiscussshortname"
     author = "Fabio Oliveira"
     description = "Fabio Oliveira's personal website"
     keywords = "blog,developer,personal"
-    info = "CTO and all things around sofware architecture and delivery"
-    avatarurl = "images/avatar.jpg"
-    footercontent = "Enter a text here."
+    info = "CTO and all things around sofware architecture, testing and delivery"
+    avatarurl = "images/fabio.jpeg"
+    footercontent = "Not always right, but always learning"
 
     dateformat = "January 2, 2006"
 
@@ -42,7 +42,7 @@ disqusShortname = "yourdiscussshortname"
     name = "Github"
     icon = "fab fa-github"
     weight = 1
-    url = "https://github.com/johndoe/"
+    url = "https://github.com/fbdo/"
 [[params.social]]
     name = "Gitlab"
     icon = "fab fa-gitlab"
@@ -68,13 +68,13 @@ disqusShortname = "yourdiscussshortname"
 [languages]
     [languages.en]
         languagename = "English" # The language name to be displayed in the selector.
-        title = "John Doe"
+        title = "Fabio Oliveira"
 
         # You can configure the theme parameter for each language.
         [languages.en.params]
-        author = "John Doe"
-        info = "Full Stack DevOps and Magician"
-        description = "John Doe's personal website"
+        author = "Fabio Oliveira"
+        info = "CTO and all things around sofware architecture and delivery"
+        description = "Fabio Oliveira's personal website"
         keywords = "blog,developer,personal"
 
         [languages.en.menu] # It is possible to change the menu too.
