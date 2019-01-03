@@ -28,7 +28,7 @@ disqusShortname = "yourdiscussshortname"
     hideCopyright = false
 
     # Git Commit in Footer, uncomment the line below to enable it.
-    commit = "https://github.com/luizdepra/hugo-coder/tree/"
+    commit = "https://github.com/fbdo/site/tree/"
 
     rtl = false
 
@@ -44,25 +44,20 @@ disqusShortname = "yourdiscussshortname"
     weight = 1
     url = "https://github.com/fbdo/"
 [[params.social]]
-    name = "Gitlab"
-    icon = "fab fa-gitlab"
-    weight = 2
-    url = "https://gitlab.com/johndoe/"
-[[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter"
     weight = 3
-    url = "https://twitter.com/johndoe/"
+    url = "https://twitter.com/fbdo/"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
     weight = 4
-    url = "https://www.linkedin.com/in/johndoe/"
-[[params.social]]
-    name = "Medium"
-    icon = "fab fa-medium"
-    weight = 5
-    url = "https://medium.com/@johndoe"
+    url = "https://www.linkedin.com/in/fabiobragaoliveira/"
+# [[params.social]]
+#    name = "Medium"
+#    icon = "fab fa-medium"
+#    weight = 5
+#    url = "https://medium.com/@johndoe"
 
 
 [languages]
