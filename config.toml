@@ -52,7 +52,7 @@ googleAnalytics = "UA-132353875-1"
     name = "Twitter"
     icon = "fab fa-twitter"
     weight = 3
-    url = "https://twitter.com/fbdo/"
+    url = "https://twitter.com/messages/compose?recipient_id=31106182"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
