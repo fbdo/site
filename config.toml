@@ -52,7 +52,7 @@ googleAnalytics = "UA-132353875-1"
     name = "Twitter"
     icon = "fab fa-twitter"
     weight = 3
-    url = "https://twitter.com/messages/compose?recipient_id=31106182"
+    url = "https://twitter.com/fbdo/"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
@@ -97,4 +97,4 @@ googleAnalytics = "UA-132353875-1"
         [[languages.en.menu.main]]
         name = "Contact me"
         weight = 5
-        url = "mailto:fabio.braga@acm.org"
+        url = "https://twitter.com/messages/compose?recipient_id=31106182"
