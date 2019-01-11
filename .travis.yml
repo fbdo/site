@@ -1,20 +1,17 @@
 language: go
-
 install:
-    - go get github.com/gohugoio/hugo
-
+- go get github.com/gohugoio/hugo
 before_script:
-    - rm -rf public
-
+- rm -rf public
 script:
-    - hugo
-
+- hugo
 deploy:
   provider: s3
-  access_key_id: AKIAIAXYAK4BPCG7D7UA
-  secret_access_key:
-    secure: Xb3+YS1phkcvY/gRLOWLtSNefR+6gzRmyOQ6+wbPfBkvSd0BN9OxskHDaXhZk8TX/BFFejBHpFV+bnE48sRVjDV51tuQ+QLSuA+bWK+zbQ6kpxOTQKNe5tnF2rcpIejcl8lLoGhUM2zU5p7F8E4iOz2ckySMx1mAOCe/l/bajM31Jdt4QfMZzYeowFzqz7EOfIsK3NDWW1MdT2lOpAr7ZeYBNl3jOj2RG5YFM/69zlW6o+ZPjd02yAjESe7XUg/KeSRWiyehPFI6pHNGB08uRfpL9Z3RaXUmKkiLd/hlEZ2VxfPj2LLwjF+8cNhSXDRLh/ZQccn8wYLLUr7aci5xuYaJLPpUUWz8PQV7gcQEv3Pd1gB27JWZAittuDSjJxQ69ilGNWxDqlSldkpqRlclQpdjP5CSuO6r4ZmvxQTEDecho69PIF/8WRQiJTUYydCuP6Yy0n4ERErtZBHiLh1Ov39BZTpq8l9riTu9DeyCSUXyu4ixzlgHNab8CgwIsSWWrgwb/rzrInYy2OJsUUBybD7rDsVvPy0a2IZbwUO/aoVEDFbq3Ni9z+G/KtktLwq3tlTQNvSKCK24ysC21XJtkIO7jUtiNDClzlW9EBUfiv1Z30JHi6C+SaP0QwMHCgH8aUATBhkDw9lumxcszomJ7XARAXlrtURXuouQbGHbxNw=
   bucket: www.fabiooliveira.me
   skip_cleanup: true
   region: eu-central-1
   local_dir: public
+  acl: public_read
+  access_key_id: AKIAIAXYAK4BPCG7D7UA
+  secret_access_key:
+    secure: VT/pQoLZxGPOnvSVwR5raWuUD5+EET+UVwdnYlldyItHcHxuj5iJ7ioO31yBP1SaIPyceznITLNHvRgW6986FTAsyc2Oj2lzvkPO3evifDEPwfngTLwHAJrPXUYlNO24GLVJgoxb60caZJMrzh9Wqf2X2X2ZHlpU5JdDpdmg2tU1k4E4oX/6fGjeTcbfzefCFqSaW/FTCx9QNOdRhkcscqY/6b7q8+JGd6l+cfUUA+M8u8Xf/nF5mOErtE0dmUsCJ5/X73DQ+vjZsSVStSIBGERIVvWYizWEEs1EGgiSh6/yrDy9ZnQg2zJkeHAXhWwyFb2NuY1YJXA3VL9fuvzlEjScBeqDGUgReUJ7mz+1IlH+vuRMbMGbFZ8ExVdA80f5lwnwLK09xC/xUYIBuGKxiVMyAJeG3vsN6Ao+pSK7RCi3pRRgRdpW9UGfIY9BaIx/zHXQvFecwvnDCv9Rl+ICaL1LJExytWwBPspmXnT5LAhPYVXYYdZJJFrWF/QK9/CmzquqiqUnXPHcajivNfbJl4HZTkNpqfp66yo7nagwF6tGlB8KfneRoac43ts3fF89eJDX64k8ByoKEvzcY7pw+l1/R13nujuHqivGkZKcXhW5momJVhg4cWQZS8ft2hxUXMteNBd6XvZIpHqs/wDEa3TbU3acJo1x3uPT2kbVsQY=
