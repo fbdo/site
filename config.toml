@@ -22,8 +22,8 @@ googleAnalytics = "UA-132353875-1"
 [params]
     author = "Fabio Oliveira"
     description = "Fabio Oliveira's personal website"
-    keywords = "blog,developer,personal"
-    info = "CTO and all things around sofware architecture, testing and delivery"
+    keywords = "blog,developer,personal,software,cloud,agile,devops"
+    info = "CTO, Solution Architect, Cloud, Agile Coach, DevOps, Polyglot Software Engineer and everything else..."
     avatarurl = "images/fabio.jpeg"
     footercontent = "Not always right, but always learning"
 
@@ -73,7 +73,7 @@ googleAnalytics = "UA-132353875-1"
         # You can configure the theme parameter for each language.
         [languages.en.params]
         author = "Fabio Oliveira"
-        info = "CTO, Solution Architect, Agile Coach, DevOps, Polyglot Software Engineer and everything else..."
+        info = "CTO, Solution Architect, Cloud, Agile Coach, DevOps, Polyglot Software Engineer and everything else..."
         description = "Fabio Oliveira's personal website"
         keywords = "blog,developer,personal"
 
