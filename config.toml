@@ -68,16 +68,16 @@ disqusShortname = "yourdiscussshortname"
         # You can configure the theme parameter for each language.
         [languages.en.params]
         author = "Fabio Oliveira"
-        info = "CTO and all things around sofware architecture and delivery"
+        info = "CTO, Solution Architect, Agile Coach, DevOps, Polyglot Software Engineer and everything else..."
         description = "Fabio Oliveira's personal website"
         keywords = "blog,developer,personal"
 
         [languages.en.menu] # It is possible to change the menu too.
 
         [[languages.en.menu.main]]
-        name = "About"
+        name = "Résumé"
         weight = 1
-        url = "/about/"
+        url = "https://fbdo.github.io/resume/"
 
         [[languages.en.menu.main]]
         name = "Blog"
@@ -87,9 +87,9 @@ disqusShortname = "yourdiscussshortname"
         [[languages.en.menu.main]]
         name = "Projects"
         weight = 3
-        url = "/projects/"
+        url = "https://github.com/fbdo?tab=repositories"
 
         [[languages.en.menu.main]]
         name = "Contact me"
         weight = 5
-        url = "/contact/"
+        url = "mailto:fabio.braga@acm.org"
