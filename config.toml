@@ -17,7 +17,7 @@ disqusShortname = "yourdiscussshortname"
 googleAnalytics = "UA-132353875-1"
 
 [Permalinks]
-  post = "/:filename/index.html"
+  posts = "/:year/:month/:day/:title/index.html"
 
 [params]
     author = "Fabio Oliveira"
