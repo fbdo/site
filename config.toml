@@ -18,9 +18,6 @@ googleAnalytics = "UA-132353875-1"
 
 uglyURLs = true
 
-[Permalinks]
-  posts = "/:year/:month/:day/:title/index"
-
 [params]
     author = "Fabio Oliveira"
     description = "Fabio Oliveira's personal website"
@@ -89,7 +86,7 @@ uglyURLs = true
         [[languages.en.menu.main]]
         name = "Blog"
         weight = 2
-        url = "/posts/index.html"
+        url = "/posts.html"
 
         [[languages.en.menu.main]]
         name = "Projects"
