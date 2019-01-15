@@ -9,7 +9,9 @@ categories = ["teamwork"]
 
 # Don't forget the belonging clues
 
-- Posture ans expressions are important
+A reminder to myself, from the book [Culture Code](https://www.goodreads.com/book/show/33517721-the-culture-code), a book I can recommend:
+
+- Posture and expressions are important
 - Avoid interruptions
 - Spotlight your weakness (I can be wrong here)
 - Embrace the message (hug the messager)
