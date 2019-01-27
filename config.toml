@@ -57,6 +57,11 @@ uglyURLs = true
     icon = "fab fa-linkedin"
     weight = 4
     url = "https://www.linkedin.com/in/fabiobragaoliveira/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-xing"
+    weight = 4
+    url = "https://www.xing.com/profile/Fabio_Oliveira9"
 # [[params.social]]
 #    name = "Medium"
 #    icon = "fab fa-medium"
