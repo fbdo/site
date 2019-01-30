@@ -1,31 +1,29 @@
 +++ 
 draft = true
 date = 2019-01-27T20:53:16+01:00
-title = ""
+title = "Scalability and high availability rules"
 slug = "" 
-tags = []
+tags = ["scalability", "high availability", "cloud"]
 categories = []
 +++
 
-# Scalability and High Availability Rules
-
-## Objectives
+# Objectives
 This page describes a set of rules and a methodology that, once applied to a system, can help you evaluate how well your system is regarding
 scalability and availability, can help you map your weaknesses and plan actions to improve them.
 In this context, scalability, availability and performance measured by low latency and high throughput are highly intertwined, as a high available
 system need to scale to be available regardless the load, a system with a high throughput scale more easily than one with a low throughput, and
 as a consequence is more available.
 
-## Vocabulary
+# Vocabulary
 
-### Scalability
+## Scalability
 
 Citing the Wikipedia:
 Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged
 to accommodate that growth. [1] For example, a system is considered scalable if it is capable of increasing its total output under
 an increased load when resources (typically hardware) are added.
 
-### Availability
+## Availability
 Citing the Wikipedia:
 
 The degree to which a system, subsystem or equipment is in a specified operable and committable state at the start of a
@@ -51,7 +49,7 @@ Or in another words, you can expect approximately 6 hours of outage per year for
 
 An interesting fact that affects the availability is the probability one machine used by your system will fail is inversely proportional to the number of machine you use. So, in the example above, given a datacenter with 1000 machines (a relatively small datacenter) where each one has a MTTF of 5 years, you will have a machine failing more or less every 2 days.
 
-## Rules Review and Priorization
+# Rules Review and Priorization
 Below you can see some rules/best practices to achieve infinite scalability. Every rule not obeyed implies in a risk, and this risk can be defined as:
 
 Risk = Probability * Impact
@@ -67,7 +65,7 @@ Priority = f(Risk Reduction, Cost of Solution)
 
 The Risk Reduction and Cost of Solution are very specific for a organization/department/team. To make easier to evaluate a system, it's simpler to give discrete values as High, Medium and Low for both variables, ariving to the following commutative table:
 
-## Rules
+# Rules
 
 Bellow you can find a list of rules that once applied consistently to your project, Your project will enjoy scalability and high availability. 
 
@@ -78,34 +76,56 @@ priority rules normally are the ones with low cost and high risk, while low prio
 
 The non-complaince to one of the rules normally means the project is accepting a risk in terms of scalability, and as such it's needed a analysis cost/benefit. For real-time/critical systems the risk imposed by a low priority rule can be unnaceptable.
 
-1. Reduce the Equation Rule
+## Reduce the Equation Rule
 
-    1. Don't overengineer the solution (High-2)
+### Don't overengineer the solution (High-2)
 
 Don't build a solution for a problem bigger than the requirement.
+
 Don't do unnecessary work. Execute something only once.
+
 Make it simple to other architects to understand.
+
 Test: present the solution to a team of pairs
-Rule #1.2: Design scale into the solution (Medium-3)
+
+### Design scale into the solution (Medium-3)
+
 D-I-D process:
+
 Design for 20x capacity
+
 Implement for 3x capacity
+
 Deploy for 1.5x capacity
+
 Design have a low cost, design for 20x to infinity.
+
 Implement considering 3x to 20x the capacity, consider the greatest bottleneck.
-Rule #1.3: Simplify the solution 3 times over (Medium-3)
+
+### Simplify the solution 3 times over (Medium-3)
+
 Simplify scope using the Pareto principle. 80% of the revenue is achieved by 20% of the work.
+
 Simplify design by thinking about cost effectiveness and scalability.
-Do the same work faster and easier. Consider to join services together instead of multiple network trips to do the same job.
+
+Do the same work faster and easier. Consider to join services together
+instead of multiple network trips to do the same job.
+
 Simplify implementation by leveraging the experience of other, reuse open source, libraries from other departments, buy existing
 solutions or check for descriptions of a similar solution.
-Rule #1.4: Reduce DNS lookups (Medium-3)
+
+### Reduce DNS lookups (Medium-3)
+
 Large number of user requests affects the user experience. DNS lookups contribute to slow down the application.
 Rule #1.5: Reduce number of objects travelling the network (Medium-3)
 Check where your network is slower/faster and aggregate calls appropriately. The datacenter network is usually faster, so your protocol can be
 chatier here, but the last net hop to the user is usually slower.
-#2 Distribute your Work
-Rule #2.1: Design to clone or replicate things (High-2)
+
+
+## Distribute your Work
+
+### Design to clone or replicate things (High-2)
+
 Duplicate services/databases to spread the load
 Clone services and implement load balancers
 Database normalization and ACID properties make them difficult to split
