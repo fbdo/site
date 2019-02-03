@@ -224,7 +224,7 @@ All the JDBC drivers use blocking I/O
 New options are reactive frameworks
 
 ## Don't Duplicate your Work
-
+    
 Rule #5.1: Don't check your own work (Low-4)
 Don't validate data you just wrote
 Keep data locally if you will immeadiately need it
