@@ -126,55 +126,105 @@ chatier here, but the last net hop to the user is usually slower.
 
 ### Design to clone or replicate things (High-2)
 
-Duplicate services/databases to spread the load
-Clone services and implement load balancers
-Database normalization and ACID properties make them difficult to split
-High read to write ratio allow read-only copies
-A layer of caching is a recommended first step
-Rule #2.2: Design to split different things (a.k.a domain-based microservices) (Medium-3)
+Duplicate services/databases to spread the load.
+
+Clone services and implement load balancers.
+
+Database normalization and ACID properties make them difficult to split.
+
+High read to write ratio allow read-only copies.
+
+A layer of caching is a recommended first step.
+
+### Design to split different things (a.k.a domain-based microservices) (Medium-3)
+
 Split systems in nouns or verbs or both.
-Separation using verbs: signup, login, search, browse, view, add-to-cart, purchase
-Separation using nouns: product catalog, product inventory, user account information, marketing information
-Rule #2.3: Design to split similar things (a.k.a sharding) (Medium-3)
+
+Separation using verbs: signup, login, search, browse, view, add-to-cart, purchase.
+
+Separation using nouns: product catalog, product inventory, user account information, marketing information.
+
+### Design to split similar things (a.k.a sharding) (Medium-3)
+
 Identify a characteristic of your data and split or partition both data and services based on that attribute.
+
 It's possible to use some business related sharding, like per geographic location, by company size, by revenue. Or a simple modulus or
 hash function by user id.
+
 When data for the same group of users is grouped together, bigger the chance for a cache hit.#3 Design to Scale Out Horizontally
-Rule #3.1: Design your solution to scale out, not just up (High-2)
-Allows for fast scale of transactions at the cost of duplicated data and functionality
-Don't get caught in the trap of expecting to scale up to find out that you've run out of a faster and larger system to purchase
-Rule #3.2: Use commodity systems (High-2)
+
+### Design your solution to scale out, not just up (High-2)
+
+Allows for fast scale of transactions at the cost of duplicated data and functionality.
+
+Don't get caught in the trap of expecting to scale up to find out that you've run out of a faster and larger system to purchase.
+
+### Use commodity systems (High-2)
+
 Many smaller systems don't suffer from inefficient sheduling algorithms, memory bus access speeds, structural harzards, data harzards.
-Stay way from very large systems
-Allows for fast, cost-effective growth
-Rule #3.3: Scale out your data centers (Medium-3)
+
+Stay way from very large systems.
+
+Allows for fast, cost-effective growth.
+
+### Scale out your data centers (Medium-3)
+
 Forget about hot-cold datacenters, they have more or less the same cost of operation and there's a higher risk of failure when you finally need it.
+
 Slice data between your datacenters to keep high availability. Spare some machine resource to distribute the load in case of failure.
+
 E.g. given three datacenters:
-Rule #3.4: Design to leverage the cloud (Low-4)
+
+### Design to leverage the cloud (Low-4)
+
 Provision of hardware in the cloud takes few minutes.
+
 Design to leverage virtualization in all sites and grow in the cloud to meet unexpected spiky demand.
+
 BUT be carefull to not depend on specific cloud services to avoid a supplier lock-in.
-#4 Use the Right Tool
-Rule #4.1: Use the right database, and use it properly (High-2)
-Don't use a SQL database where a noSQL database would work better
-Use the filesystem when possible
-Relationships give extra flexibility and guarantees but also extra costs to scale
-Rule #4.2: Reduce the numbers of firewalls (High-2)
+
+## Use the Right Tool
+
+### Use the right database, and use it properly (High-2)
+
+Don't use a SQL database where a noSQL database would work better.
+
+Use the filesystem when possible.
+
+Relationships give extra flexibility and guarantees but also extra costs to scale.
+
+### Reduce the numbers of firewalls (High-2)
+
 Use firewalls where they reduce risks, but be aware they cause issues with scalability and availability.
-Don't use for low value content
-Rule #4.3: Actively use log files (Medium-3)
+
+Don't use for low value content.
+
+### Actively use log files (Medium-3)
+
 Use the application log to diagnose and prevent problems
+
 Implement a correlation ID to correlate logs from different services
+
 Put a process in place to monitor log files and force people to take action on issues
+
 Aggregate them, use log servers on out-of-band network
+
 Archive and purge as the value decreases
+
 Log in an asynchronous fashion
-Rule #4.4: Use Non-blocking I/O as much as possible (High-2)
+
+### Use Non-blocking I/O as much as possible (High-2)
+
 Serial, blocking I/O were the standard but are too expensive in high throuput systems
+
 Most of the Java Web servers use blocking I/O
+
 All the JDBC drivers use blocking I/O
-New options are reactive frameworks#5 Don't Duplicate your Work
+
+New options are reactive frameworks
+
+## Don't Duplicate your Work
+
 Rule #5.1: Don't check your own work (Low-4)
 Don't validate data you just wrote
 Keep data locally if you will immeadiately need it
