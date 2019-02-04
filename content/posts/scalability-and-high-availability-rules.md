@@ -349,74 +349,142 @@ Avoid 2 and 3 phase commits, they slowdown your application proportionally to th
 
 ### Don't use SELECT FOR UPDATE (High-2)
 It adds locks and can slowdown transactions
+
 Some databases bave by default cursors FOR UPDATE, check your documentation
-Rule #8.6: Don't select everything with SELECT * (Very High-1)
+
+### Don't select everything with SELECT * (Very High-1)
+
 More probabble to break things if the table structure changes, and it will transfer unnecessary data
-It will transfer unnecessary data
-#9 Design for Fault Tolerance and Graceful Failure
-Rule #9.1: Design using fault-isolative "swim lanes" (Medium-3)
+
+## Design for Fault Tolerance and Graceful Failure
+
+### Design using fault-isolative "swim lanes" (Medium-3)
+
 Create fault isolation domains
+
 Nothing is shared between swim lanes, including networkDatabases and servers should never be shared
+
 No synchronous calls exists between swim lanes
+
 Limit asynchronous calls
+
 On asynchronous calls, you should be able to just ignore or no process now the response
+
 On a virtualized infra, keep all virtualized servers of a physical server in the same swim lane
+
 Tools and monitoring need to be fault tolerant as well, you don't want to lose them when you require them the most
-Rule #9.2: Never trust single point of failure (High-2)
+
+### Never trust single point of failure (High-2)
+
 Strive for active/active configurations
+
 Everything fails
-Rule #9.3: Avoid putting systems in series (Medium-3)
+
+### Avoid putting systems in series (Medium-3)
+
 Elements in series have a multiplicative effect of failure
+
 Don't ignore network elements
-Rule #9.4: Ensure you can active/deactivate new features (Low-4)
+
+### Ensure you can active/deactivate new features (Low-4)
+
 Use feature toggles and circuit breakers
+
 Implement when the cost is less than the risk = likehood * impact
-#10 Avoid or Distribute State
-Rule #10.1: Strive for statelessness (Medium-3)
+
+## Avoid or Distribute State
+
+### Strive for statelessness (Medium-3)
+
 Measure the need for state in terms of revenue and increased transactions
+
 Session and state cost money
-Rule #10.2: Maintain session data in the client when possible (High-2)
+
+### Maintain session data in the client when possible (High-2)
+
 Careful with sidejacking, trasfer an authorization cookie using https for example
-Rule #10.3: Make use of a distributed cache for states (High-2)
+
+### Make use of a distributed cache for states (High-2)
+
 Don't implement systems that require affinity to serve to function properly
+
 Don't use state or session replication to create duplicates of data on different systems
+
 Don't locate the cache on the system dong the work
+
 You can put your data in databases, non-persistent object caches and hybrid solutions
-#11 Asynchronous Communications and Message Buses
-Rule #11.1: Communicate asynchronously as much as possible (High-2)
+
+## Asynchronous Communications and Message Buses
+
+### Communicate asynchronously as much as possible (High-2)
+
 On every external/third party API
+
 For long runnig processes
+
 On error prone/overly complex methods that change frequently
+
 When there's no temporal constraint between two processes
-Rule #11.2: Ensure that your message bus can scale (High-2)
+
+### Ensure that your message bus can scale (High-2)
+
 Scale by service or message attribute
+
 Scale by customer, user, or site attribute
-Rule #11.3: Avoid overcrowding your message bus (High-2)
+
+### Avoid overcrowding your message bus (High-2)
+
 Traffic isn't free
-Sample traffic where possibleAnalyze the business value of every event
-#12 Miscellaneous
-Rule #12.1: Be wary of scaling through third parties (Very High-1)
+
+Sample traffic where possible
+
+Analyze the business value of every event
+
+## Miscellaneous
+
+### Be wary of scaling through third parties (Very High-1)
+
 You are a hostage of their SLAs
+
 They will not give you special treatment when there's an incident
+
 Be aware of provider lock in
+
 A team exceptionaly can use a third party feature to speedup implementation, but should keep it as a technical debit
-Rule #12.2: Purge, archive and cost-justify storage (Medium-3)
+
+### Purge, archive and cost-justify storage (Medium-3)
+
 Match storage cost to data value
 Remove data os value lower than the cost to store it
 Use RFM: recency, frequency and monetization analisys
-Rule #12.3: Partition Inductive, deductive, batch and user interaction (OLTP) workloads (High-2)
+
+### Partition Inductive, deductive, batch and user interaction (OLTP) workloads (High-2)
+
 Every type of iteractioin deserves its own partition
-Rule #12.4: Design your application to be monitored (High-2)
+
+### Design your application to be monitored (High-2)
+
 Prepare yourself to answer:
+
 Is there a problem? (business oriented/customer centric metrics)
+
 Where is the problem? (component/service level metrics)
+
 What is the problem? (low level metrics)
+
 Why is there a problem? (Posmortem)
+
 Will be there a problem? (Last level, prediction)
-Rule #12.5: Be competent (Very High-1)
+
+### Be competent (Very High-1)
+
 Know your tech, or have someone who knows
+
 Delegation is different from omission
+
 The client doesn't care if it's a supplier mistake, your are ultimatelly responsible
-Bibliography
+
+
+# Bibliography
 Scalability Rules: Principles for Scaling Web Sites, Second Edition by Martin L. Abbott; Michael T. Fisher, Published by Addison-Wesley
 Professional , 2016
