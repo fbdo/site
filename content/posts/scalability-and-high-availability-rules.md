@@ -225,70 +225,129 @@ New options are reactive frameworks
 
 ## Don't Duplicate your Work
     
-Rule #5.1: Don't check your own work (Low-4)
+### Don't check your own work (Low-4)
+
 Don't validate data you just wrote
+
 Keep data locally if you will immeadiately need it
-Rule #5.2: Stop redirecting traffic (Medium-3)
+
+### Stop redirecting traffic (Medium-3)
+
 Traffic redirections on the client side cause unecessary resource consumption.
+
 Use server side redirection features instead
-Rule #5.3: Relax temporal constraints (Very High-1)
+
+### Relax temporal constraints (Very High-1)
+
 Relax your temporal constraints, it's hard to keep them and they are hardly necessary.
-#6 Use Cache Aggressively
-Rule #6.1: Leverage Content Delivery Networks (Medium-3)
+
+## Use Cache Aggressively
+
+### Leverage Content Delivery Networks (Medium-3)
+
 Wherever possible move static, semi-static or content that are not so dynamic to CDNs.
-Rule #6.2: Use Expire Headers (Medium-3)
+
+### Use Expire Headers (Medium-3)
+
 Use the expire headers to inform the client or the CDN when a content should be considered stale.
-Rule #6.3: Leverage application caches (Medium-3)
+
+### Leverage application caches (Medium-3)
+
 Split the application to increase the cache hits by business terms, e.g. 80% of the requests occur against 20% of your inventory.
+
 Premium users on their on servers
-Rule #6.4: Leverage object caches (Very High-1)
+
+### Leverage object caches (Very High-1)
+
 On the application layer use caches, normally before your datastore
+
 Monitor the cache hit ratio, it should be around 80%.
-Rule #6.5: Put object caches on their own "tier" (High-2)
+
+### Put object caches on their own "tier" (High-2)
+
 You will safe CPU and memory from the application layer
-#7 Learn from your Mistakes
-Rule #7.1: Learn aggressively (High-2)
+
+## Learn from your Mistakes
+
+### Learn aggressively (High-2)
+
 Do A/B testing
+
 Employ a postmortem process:
+
 Phase 1: Timeline
+
 Phase 2: Issue identification
+
 Phase 3: State actions, use SMART principle (every action should be specific, measurable, attainable, realistic and timely).
+
 Every action need to have a single owner, even if executed by a group
+
 Hypothesize failure
+
 No failure should stop in "server A died", we need to find why the monitoring didn't show the problem earlier, why the reaction was slow,
 why it took so long to recover, why the database is not split to reduce impact, etc...
+
 Keep a log of failures and review them periodically to identify patterns
-Rule #7.2: Don't rely on QAs to find mistakes (High-2)The QA know-how should be used to define the quality process and to keep memory of mistakes and recurring problems, help the
+
+### Don't rely on QAs to find mistakes (High-2)
+
+The QA know-how should be used to define the quality process and to keep memory of mistakes and recurring problems, help the
 engineering team to find root causes in the process
+
 Use TDD aggressively. Define and monitor a desired code coverage.
-Rule #7.3: Failing to design for rollbacks is designing for failure (Very High-1)
+
+### Failing to design for rollbacks is designing for failure (Very High-1)
+
 Ensure all releases have the ability to rollback, practice it on QA
+
 The cost is low, the risk is high
+
 Only additive database changes
+
 Database changes should be scripted and testes, including rollback scripts
+
 Use restricted SQL queries, don't use SELECT * and add column names to UPDATE statements
+
 Avoid semantic changes of data
+
 The application should have a way to activate features for a limited number of users
-#8 Database Rules
-Rule #8.1: Remove business intelligence from transaction processing (High-2)
+
+## Database Rules
+
+### Remove business intelligence from transaction processing (High-2)
+
 Don't use stored procedures
+
 Easier to migrate to NoSQL down the road
+
 Easier to scale
+
 Business process should not be tied to the product
-Rule #8.2: Be aware of costly relationships (Medium-3)
+
+### Be aware of costly relationships (Medium-3)
+
 Relationships defines how costly is to retrieve data and how difficult would be to split the database
+
 New queries should be analyzed by DBAs
+
 To scale we may reduce normal forms
+
 A query join can be replaced by a view, a materialized view, a summary table to preprocess the query, or use the application to do the
 join
-Rule #8.3: Use the right type of database lock (Very High-1)
+
+### Use the right type of database lock (Very High-1)
+
 Be aware of implicit locks and explicit ones
-Types of locks: iimplicit, explicit, row, page, extent, table, database
+
+Types of locks: implicit, explicit, row, page, extent, table, database
 Monitor your database to check if the correct lock is being deployed
 Employ read-only database nodes, denormalize and split databases
-Rule #8.4: Don't use multiphase commits (High-2)
+
+### Don't use multiphase commits (High-2)
 Avoid 2 and 3 phase commits, they slowdown your application proportionally to the number of nodes on your cluster
-Rule #8.5: Don't use SELECT FOR UPDATE (High-2)
+
+### Don't use SELECT FOR UPDATE (High-2)
 It adds locks and can slowdown transactions
 Some databases bave by default cursors FOR UPDATE, check your documentation
 Rule #8.6: Don't select everything with SELECT * (Very High-1)
