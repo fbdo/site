@@ -1,10 +1,10 @@
 +++ 
-draft = true
+draft = false
 date = 2019-01-27T20:53:16+01:00
 title = "Scalability and high availability rules"
 slug = "" 
 tags = ["scalability", "high availability", "cloud"]
-categories = []
+categories = ["availability","scalability"]
 +++
 
 # Objectives
@@ -81,8 +81,9 @@ Bellow you can find a list of rules that once applied consistently to your proje
 
 We can split the process of activing high availabiliity in 3 dimensions: a horizontal scaling, splitting by function, service or resource and lookup/formulaic splits, arriving in the following cube representing the 3 variables relationship regarding the ideal near infinite scale:
 
-The rules are organized in main sections, and every rules has a number, a short description and a resulting benefit/priority to the project. High
-priority rules normally are the ones with low cost and high risk, while low priority rules are the ones with high cost and low risk. The classification given by this document should be used as a starting point and adapted according to the project context.
+![Scalability cube](/static/scalability-and-high-availability-rules/scalability_cube.png.png)
+
+The rules are organized in main sections, and every rules has a number, a short description and a resulting benefit/priority to the project. High priority rules normally are the ones with low cost and high risk, while low priority rules are the ones with high cost and low risk. The classification given by this document should be used as a starting point and adapted according to the project context.
 
 The non-complaince to one of the rules normally means the project is accepting a risk in terms of scalability, and as such it's needed a analysis cost/benefit. For real-time/critical systems the risk imposed by a low priority rule can be unnaceptable.
 
@@ -127,9 +128,9 @@ solutions or check for descriptions of a similar solution.
 ### Reduce DNS lookups (Medium-3)
 
 Large number of user requests affects the user experience. DNS lookups contribute to slow down the application.
-Rule #1.5: Reduce number of objects travelling the network (Medium-3)
-Check where your network is slower/faster and aggregate calls appropriately. The datacenter network is usually faster, so your protocol can be
-chatier here, but the last net hop to the user is usually slower.
+
+### Reduce number of objects travelling the network (Medium-3)
+Check where your network is slower/faster and aggregate calls appropriately. The datacenter network is usually faster, so your protocol can be chatier here, but the last net hop to the user is usually slower.
 
 
 ## Distribute your Work
@@ -295,10 +296,9 @@ Every action need to have a single owner, even if executed by a group
 
 Hypothesize failure
 
-No failure should stop in "server A died", we need to find why the monitoring didn't show the problem earlier, why the reaction was slow,
-why it took so long to recover, why the database is not split to reduce impact, etc...
+No failure should stop in "server A died", we need to find why the monitoring didn't show the problem earlier, why the reaction was slow, why it took so long to recover, why the database is not split to reduce impact, etc...
 
-Keep a log of failures and review them periodically to identify patterns
+Keep a log of failures and review them periodically to identify patterns.
 
 ### Don't rely on QAs to find mistakes (High-2)
 
