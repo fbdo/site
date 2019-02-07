@@ -19,14 +19,15 @@ as a consequence is more available.
 ## Scalability
 
 Citing the Wikipedia:
-Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged
-to accommodate that growth. [1] For example, a system is considered scalable if it is capable of increasing its total output under
+
+> Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged
+to accommodate that growth. For example, a system is considered scalable if it is capable of increasing its total output under
 an increased load when resources (typically hardware) are added.
 
 ## Availability
 Citing the Wikipedia:
 
-The degree to which a system, subsystem or equipment is in a specified operable and committable state at the start of a
+> The degree to which a system, subsystem or equipment is in a specified operable and committable state at the start of a
 mission, when the mission is called for at an unknown, i.e. a random, time. Simply put, availability is the proportion of time a
 system is in a functioning condition. This is often described as a mission capable rate. Mathematically, this is expressed as
 100% minus unavailability.
@@ -36,13 +37,15 @@ The unavailability U of a system can be mathematically expressed as:
 U = MTTR/(MTTR+MTTF)
 
 Where:
+
 MTTR is the Mean Time To Recover
+
 MTTF is the Mean Time To Fail.
 
-As an example, let's suppose you have an application running in one machine in your datacenter, and your hardware provider told you the MTTF of this machine is 5 years. To recover from this failure, your application takes 30s to come alive again, counting the time to detect the failure, the
-time to instantiate a new virtual machine in another machine in your datacenter, and the time you application takes to startup (this is your MTTR).
+As an example, let's suppose you have an application running in one machine in your datacenter, and your hardware provider told you the MTTF of this machine is 5 years. To recover from this failure, your application takes 30s to come alive again, counting the time to detect the failure, the time to instantiate a new virtual machine in another machine in your datacenter, and the time you application takes to startup (this is your MTTR).
 
 So your availability A is:
+
 A = 1 - U = 1 - (30/(30 + 5*365*24*60*60)) = 1 - (30/(30 + 157680000)) = 0,999999809741284
 
 Or in another words, you can expect approximately 6 hours of outage per year for your application.
@@ -57,6 +60,7 @@ Risk = Probability * Impact
 Where:
 
 Impact = %Impact * (Downtime + %DataLoss + ResponseTimeImpact)
+
 %Impact = %CustomersImpacted or %FunctionalityImpacted
 
 By those terms it's possible to define a prioritization table where for each rule, the priority is:
@@ -64,6 +68,12 @@ By those terms it's possible to define a prioritization table where for each rul
 Priority = f(Risk Reduction, Cost of Solution)
 
 The Risk Reduction and Cost of Solution are very specific for a organization/department/team. To make easier to evaluate a system, it's simpler to give discrete values as High, Medium and Low for both variables, ariving to the following commutative table:
+
+| Risk/Cost  | Low           | Medium   | High     |
+| ---------- |:-------------:| --------:| --------:|
+| Low        | Do it         | Evaluate | Don't do |
+| Medium     | Do it         | Do it    | Evaluate |
+| High       | Do it         | Do it    | Evaluate |
 
 # Rules
 
