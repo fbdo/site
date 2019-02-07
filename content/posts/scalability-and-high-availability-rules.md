@@ -81,7 +81,7 @@ Bellow you can find a list of rules that once applied consistently to your proje
 
 We can split the process of activing high availabiliity in 3 dimensions: a horizontal scaling, splitting by function, service or resource and lookup/formulaic splits, arriving in the following cube representing the 3 variables relationship regarding the ideal near infinite scale:
 
-![Scalability cube](/static/scalability-and-high-availability-rules/scalability_cube.png.png)
+![Scalability cube](/images/scalability-and-high-availability-rules/scalability_cube.png)
 
 The rules are organized in main sections, and every rules has a number, a short description and a resulting benefit/priority to the project. High priority rules normally are the ones with low cost and high risk, while low priority rules are the ones with high cost and low risk. The classification given by this document should be used as a starting point and adapted according to the project context.
 
