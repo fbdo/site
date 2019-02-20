@@ -69,15 +69,11 @@ Priority = f(Risk Reduction, Cost of Solution)
 
 The Risk Reduction and Cost of Solution are very specific for a organization/department/team. To make easier to evaluate a system, it's simpler to give discrete values as High, Medium and Low for both variables, ariving to the following commutative table:
 
-<center>
-
 | Risk/Cost  | Low           | Medium   | High     |
 | ---------- |:-------------:| --------:| --------:|
 | Low        | Do it         | Evaluate | Don't do |
 | Medium     | Do it         | Do it    | Evaluate |
 | High       | Do it         | Do it    | Evaluate |
-
-</center>
 
 # Rules
 
@@ -85,11 +81,8 @@ Bellow you can find a list of rules that once applied consistently to your proje
 
 We can split the process of activing high availabiliity in 3 dimensions: a horizontal scaling, splitting by function, service or resource and lookup/formulaic splits, arriving in the following cube representing the 3 variables relationship regarding the ideal near infinite scale:
 
-<center>
-
 ![Scalability cube](/images/scalability-and-high-availability-rules/scalability_cube.png)
 
-</center>
 
 The rules are organized in main sections, and every rules has a number, a short description and a resulting benefit/priority to the project. High priority rules normally are the ones with low cost and high risk, while low priority rules are the ones with high cost and low risk. The classification given by this document should be used as a starting point and adapted according to the project context.
 
