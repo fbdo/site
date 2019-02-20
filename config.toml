@@ -40,7 +40,7 @@ uglyURLs = true
     inverted = false
 
     # Custom CSS
-    #custom_css = ["css/numered-headers.css"]
+    custom_css = ["css/numered-headers.css"]
 
 [[params.social]]
     name = "Github"
