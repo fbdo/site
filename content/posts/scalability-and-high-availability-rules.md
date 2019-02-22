@@ -419,7 +419,7 @@ Careful with sidejacking, trasfer an authorization cookie using https for exampl
 
 ### Make use of a distributed cache for states (High-2)
 
-Don't implement systems that require affinity to serve to function properly.
+Don't implement systems that require affinity to function properly.
 
 Don't use state or session replication to create duplicates of data on different systems.
 
