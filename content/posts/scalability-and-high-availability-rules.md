@@ -187,13 +187,15 @@ Slice data between your datacenters to keep high availability. Spare some machin
 
 E.g. given three datacenters:
 
+![Scale out datacenters](/images/scalability-and-high-availability-rules/datacenters_distribution.png)
+
 ### Design to leverage the cloud (Low-4)
 
 Provision of hardware in the cloud takes few minutes.
 
 Design to leverage virtualization in all sites and grow in the cloud to meet unexpected spiky demand.
 
-BUT be carefull to not depend on specific cloud services to avoid a supplier lock-in.
+BUT be carefull to not depend on specific cloud services to avoid a supplier lock-in. Or use it as a strategic advantage, but never do a blind choice.
 
 ## Use the Right Tool
 
