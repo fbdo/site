@@ -268,7 +268,7 @@ Use the expire headers to inform the client or the CDN when a content should be 
 
 Split the application to increase the cache hits by business terms, e.g. 80% of the requests occur against 20% of your inventory.
 
-Premium users on their on servers.
+Premium users on their own servers.
 
 ### Leverage object caches (Very High-1)
 
