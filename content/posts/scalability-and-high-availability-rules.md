@@ -53,7 +53,7 @@ Or in another words, you can expect approximately 6 hours of outage per year for
 An interesting fact that affects the availability is the probability one machine used by your system will fail is inversely proportional to the number of machine you use. So, in the example above, given a datacenter with 1000 machines (a relatively small datacenter) where each one has a MTTF of 5 years, you will have a machine failing more or less every 2 days.
 
 # Rules Review and Priorization
-Below you can see some rules/best practices to achieve infinite scalability. Every rule not obeyed implies in a risk, and this risk can be defined as:
+Every time you don't obey a rule in this page implies in a risk, and this risk can be defined as:
 
 Risk = Probability * Impact
 
@@ -75,16 +75,14 @@ The Risk Reduction and Cost of Solution are very specific for a organization/dep
 | Medium     | Do it         | Do it    | Evaluate |
 | High       | Do it         | Do it    | Evaluate |
 
-# Rules
-
-Bellow you can find a list of rules that once applied consistently to your project, Your project will enjoy scalability and high availability. 
+# Rules 
 
 We can split the process of activing high availabiliity in 3 dimensions: a horizontal scaling, splitting by function, service or resource and lookup/formulaic splits, arriving in the following cube representing the 3 variables relationship regarding the ideal near infinite scale:
 
 ![Scalability cube](/images/scalability-and-high-availability-rules/scalability_cube.png)
 
 
-The rules are organized in main sections, and every rules has a number, a short description and a resulting benefit/priority to the project. High priority rules normally are the ones with low cost and high risk, while low priority rules are the ones with high cost and low risk. The classification given by this document should be used as a starting point and adapted according to the project context.
+The rules are organized in main sections, and every rule has a short description and a resulting benefit/priority to the project. High priority rules normally are the ones with low cost and high risk, while low priority rules are the ones with high cost and low risk. The classification given by this document should be used as a starting point and adapted according to the project context.
 
 The non-complaince to one of the rules normally means the project is accepting a risk in terms of scalability, and as such it's needed a analysis cost/benefit. For real-time/critical systems the risk imposed by a low priority rule can be unnaceptable.
 
