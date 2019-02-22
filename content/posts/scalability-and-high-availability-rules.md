@@ -161,7 +161,9 @@ Identify a characteristic of your data and split or partition both data and serv
 It's possible to use some business related sharding, like per geographic location, by company size, by revenue. Or a simple modulus or
 hash function by user id.
 
-When data for the same group of users is grouped together, bigger the chance for a cache hit.#3 Design to Scale Out Horizontally
+When data for the same group of users is grouped together, bigger the chance for a cache hit.
+
+## Design to Scale Out Horizontally
 
 ### Design your solution to scale out, not just up (High-2)
 
