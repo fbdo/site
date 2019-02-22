@@ -351,8 +351,10 @@ A query join can be replaced by a view, a materialized view, a summary table to 
 
 Be aware of implicit locks and explicit ones.
 
-Types of locks: implicit, explicit, row, page, extent, table, database
-Monitor your database to check if the correct lock is being deployed
+Types of locks: implicit, explicit, row, page, extent, table, database.
+
+Monitor your database to check if the correct lock is being deployed.
+
 Employ read-only database nodes, denormalize and split databases.
 
 ### Don't use multiphase commits (High-2)
