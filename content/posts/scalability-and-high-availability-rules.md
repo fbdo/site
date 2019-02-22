@@ -317,7 +317,7 @@ The cost is low, the risk is high.
 
 Only additive database changes.
 
-Database changes should be scripted and testes, including rollback scripts.
+Database changes should be scripted and tested, including rollback scripts.
 
 Use restricted SQL queries, don't use SELECT * and add column names to UPDATE statements.
 
