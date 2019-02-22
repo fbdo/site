@@ -395,7 +395,7 @@ Everything fails.
 
 ### Avoid putting systems in series (Medium-3)
 
-Elements in series have a multiplicative effect of failure.
+Elements in series have a multiplicative effect on your probability of failure.
 
 Don't ignore network elements.
 
