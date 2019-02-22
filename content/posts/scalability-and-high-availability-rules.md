@@ -363,7 +363,7 @@ Avoid 2 and 3 phase commits, they slowdown your application proportionally to th
 ### Don't use SELECT FOR UPDATE (High-2)
 It adds locks and can slowdown transactions
 
-Some databases bave by default cursors FOR UPDATE, check your documentation
+Some databases have by default cursors FOR UPDATE, check your documentation
 
 ### Don't select everything with SELECT * (Very High-1)
 
