@@ -335,7 +335,7 @@ Easier to migrate to NoSQL down the road.
 
 Easier to scale.
 
-Business process should not be tied to the product.
+Business processes should not be tied to a single product.
 
 ### Be aware of costly relationships (Medium-3)
 
