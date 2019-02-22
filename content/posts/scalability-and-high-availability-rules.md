@@ -102,11 +102,11 @@ Test: present the solution to a team of pairs
 
 D-I-D process:
 
-Design for 20x capacity
+* Design for 20x capacity.
 
-Implement for 3x capacity
+* Implement for 3x capacity.
 
-Deploy for 1.5x capacity
+* Deploy for 1.5x capacity.
 
 Design have a low cost, design for 20x to infinity.
 
@@ -158,8 +158,7 @@ Separation using nouns: product catalog, product inventory, user account informa
 
 Identify a characteristic of your data and split or partition both data and services based on that attribute.
 
-It's possible to use some business related sharding, like per geographic location, by company size, by revenue. Or a simple modulus or
-hash function by user id.
+It's possible to use some business related sharding, like per geographic location, by company size, by revenue. Or a simple modulus or hash function by user id.
 
 When data for the same group of users is grouped together, bigger the chance for a cache hit.
 
@@ -215,41 +214,41 @@ Don't use for low value content.
 
 ### Actively use log files (Medium-3)
 
-Use the application log to diagnose and prevent problems
+Use the application log to diagnose and prevent problems.
 
-Implement a correlation ID to correlate logs from different services
+Implement a correlation ID to correlate logs from different services.
 
-Put a process in place to monitor log files and force people to take action on issues
+Put a process in place to monitor log files and force people to take action on issues.
 
-Aggregate them, use log servers on out-of-band network
+Aggregate them, use log servers on out-of-band network.
 
-Archive and purge as the value decreases
+Archive and purge as the value decreases.
 
-Log in an asynchronous fashion
+Log in an asynchronous fashion.
 
 ### Use Non-blocking I/O as much as possible (High-2)
 
-Serial, blocking I/O were the standard but are too expensive in high throuput systems
+Serial, blocking I/O were the standard but are too expensive in high throuput systems.
 
-Most of the Java Web servers use blocking I/O
+Most of the Java Web servers use blocking I/O.
 
-All the JDBC drivers use blocking I/O
+All the JDBC drivers use blocking I/O.
 
-New options are reactive frameworks
+New options are reactive frameworks.
 
 ## Don't Duplicate your Work
     
 ### Don't check your own work (Low-4)
 
-Don't validate data you just wrote
+Don't validate data you just wrote.
 
-Keep data locally if you will immeadiately need it
+Keep data locally if you will immeadiately need it.
 
 ### Stop redirecting traffic (Medium-3)
 
 Traffic redirections on the client side cause unecessary resource consumption.
 
-Use server side redirection features instead
+Use server side redirection features instead.
 
 ### Relax temporal constraints (Very High-1)
 
@@ -269,35 +268,35 @@ Use the expire headers to inform the client or the CDN when a content should be 
 
 Split the application to increase the cache hits by business terms, e.g. 80% of the requests occur against 20% of your inventory.
 
-Premium users on their on servers
+Premium users on their on servers.
 
 ### Leverage object caches (Very High-1)
 
-On the application layer use caches, normally before your datastore
+On the application layer use caches, normally before your datastore.
 
 Monitor the cache hit ratio, it should be around 80%.
 
 ### Put object caches on their own "tier" (High-2)
 
-You will safe CPU and memory from the application layer
+You will safe CPU and memory from the application layer.
 
 ## Learn from your Mistakes
 
 ### Learn aggressively (High-2)
 
-Do A/B testing
+Do A/B testing.
 
 Employ a postmortem process:
 
-Phase 1: Timeline
+* Phase 1: Timeline
 
-Phase 2: Issue identification
+* Phase 2: Issue identification
 
-Phase 3: State actions, use SMART principle (every action should be specific, measurable, attainable, realistic and timely).
+* Phase 3: State actions, use SMART principle (every action should be specific, measurable, attainable, realistic and timely).
 
 Every action need to have a single owner, even if executed by a group
 
-Hypothesize failure
+Hypothesize failure:
 
 No failure should stop in "server A died", we need to find why the monitoring didn't show the problem earlier, why the reaction was slow, why it took so long to recover, why the database is not split to reduce impact, etc...
 
@@ -306,196 +305,197 @@ Keep a log of failures and review them periodically to identify patterns.
 ### Don't rely on QAs to find mistakes (High-2)
 
 The QA know-how should be used to define the quality process and to keep memory of mistakes and recurring problems, help the
-engineering team to find root causes in the process
+engineering team to find root causes in the process.
 
 Use TDD aggressively. Define and monitor a desired code coverage.
 
 ### Failing to design for rollbacks is designing for failure (Very High-1)
 
-Ensure all releases have the ability to rollback, practice it on QA
+Ensure all releases have the ability to rollback, practice it on QA environment.
 
-The cost is low, the risk is high
+The cost is low, the risk is high.
 
-Only additive database changes
+Only additive database changes.
 
-Database changes should be scripted and testes, including rollback scripts
+Database changes should be scripted and testes, including rollback scripts.
 
-Use restricted SQL queries, don't use SELECT * and add column names to UPDATE statements
+Use restricted SQL queries, don't use SELECT * and add column names to UPDATE statements.
 
-Avoid semantic changes of data
+Avoid semantic changes of data.
 
-The application should have a way to activate features for a limited number of users
+The application should have a way to activate features for a limited number of users.
 
 ## Database Rules
 
 ### Remove business intelligence from transaction processing (High-2)
 
-Don't use stored procedures
+Don't use stored procedures.
 
-Easier to migrate to NoSQL down the road
+Easier to migrate to NoSQL down the road.
 
-Easier to scale
+Easier to scale.
 
-Business process should not be tied to the product
+Business process should not be tied to the product.
 
 ### Be aware of costly relationships (Medium-3)
 
-Relationships defines how costly is to retrieve data and how difficult would be to split the database
+Relationships defines how costly is to retrieve data and how difficult would be to split the database.
 
-New queries should be analyzed by DBAs
+New queries should be analyzed by DBAs.
 
-To scale we may reduce normal forms
+To scale we may reduce normal forms.
 
-A query join can be replaced by a view, a materialized view, a summary table to preprocess the query, or use the application to do the
-join
+A query join can be replaced by a view, a materialized view, a summary table to preprocess the query, or use the application to do the join.
 
 ### Use the right type of database lock (Very High-1)
 
-Be aware of implicit locks and explicit ones
+Be aware of implicit locks and explicit ones.
 
 Types of locks: implicit, explicit, row, page, extent, table, database
 Monitor your database to check if the correct lock is being deployed
-Employ read-only database nodes, denormalize and split databases
+Employ read-only database nodes, denormalize and split databases.
 
 ### Don't use multiphase commits (High-2)
-Avoid 2 and 3 phase commits, they slowdown your application proportionally to the number of nodes on your cluster
+Avoid 2 and 3 phase commits, they slowdown your application proportionally to the number of nodes on your cluster.
 
 ### Don't use SELECT FOR UPDATE (High-2)
-It adds locks and can slowdown transactions
+It adds locks and can slowdown transactions.
 
-Some databases have by default cursors FOR UPDATE, check your documentation
+Some databases have by default cursors FOR UPDATE, check your documentation.
 
 ### Don't select everything with SELECT * (Very High-1)
 
-More probabble to break things if the table structure changes, and it will transfer unnecessary data
+More probabble to break things if the table structure changes, and it will transfer unnecessary data.
 
 ## Design for Fault Tolerance and Graceful Failure
 
 ### Design using fault-isolative "swim lanes" (Medium-3)
 
-Create fault isolation domains
+Create fault isolation domains.
 
-Nothing is shared between swim lanes, including networkDatabases and servers should never be shared
+Nothing is shared between swim lanes, including the network, databases and servers.
 
-No synchronous calls exists between swim lanes
+No synchronous calls exists between swim lanes.
 
-Limit asynchronous calls
+Limit asynchronous calls.
 
-On asynchronous calls, you should be able to just ignore or no process now the response
+On asynchronous calls, you should be able to just ignore or no process now the response.
 
-On a virtualized infra, keep all virtualized servers of a physical server in the same swim lane
+On a virtualized infra, keep all virtualized servers of a physical server in the same swim lane.
 
-Tools and monitoring need to be fault tolerant as well, you don't want to lose them when you require them the most
+Tools and monitoring need to be fault tolerant as well, you don't want to lose them when you require them the most.
 
 ### Never trust single point of failure (High-2)
 
-Strive for active/active configurations
+Strive for active/active configurations.
 
-Everything fails
+Everything fails.
 
 ### Avoid putting systems in series (Medium-3)
 
-Elements in series have a multiplicative effect of failure
+Elements in series have a multiplicative effect of failure.
 
-Don't ignore network elements
+Don't ignore network elements.
 
 ### Ensure you can active/deactivate new features (Low-4)
 
-Use feature toggles and circuit breakers
+Use feature toggles and circuit breakers.
 
-Implement when the cost is less than the risk = likehood * impact
+Implement when the cost is less than the risk = likehood * impact.
 
 ## Avoid or Distribute State
 
 ### Strive for statelessness (Medium-3)
 
-Measure the need for state in terms of revenue and increased transactions
+Measure the need for state in terms of revenue and increased transactions.
 
-Session and state cost money
+Session and state cost money.
 
 ### Maintain session data in the client when possible (High-2)
 
-Careful with sidejacking, trasfer an authorization cookie using https for example
+Careful with sidejacking, trasfer an authorization cookie using https for example.
 
 ### Make use of a distributed cache for states (High-2)
 
-Don't implement systems that require affinity to serve to function properly
+Don't implement systems that require affinity to serve to function properly.
 
-Don't use state or session replication to create duplicates of data on different systems
+Don't use state or session replication to create duplicates of data on different systems.
 
-Don't locate the cache on the system dong the work
+Don't locate the cache on the system doing the work.
 
-You can put your data in databases, non-persistent object caches and hybrid solutions
+You can put your data in databases, non-persistent object caches and hybrid solutions.
 
 ## Asynchronous Communications and Message Buses
 
 ### Communicate asynchronously as much as possible (High-2)
 
-On every external/third party API
+On every external/third party API.
 
-For long runnig processes
+For long runnig processes.
 
-On error prone/overly complex methods that change frequently
+On error prone/overly complex methods that change frequently.
 
-When there's no temporal constraint between two processes
+When there's no temporal constraint between two processes.
 
 ### Ensure that your message bus can scale (High-2)
 
-Scale by service or message attribute
+Scale by service or message attribute.
 
-Scale by customer, user, or site attribute
+Scale by customer, user, or site attribute.
 
 ### Avoid overcrowding your message bus (High-2)
 
-Traffic isn't free
+Traffic isn't free.
 
-Sample traffic where possible
+Sample traffic where possible.
 
-Analyze the business value of every event
+Analyze the business value of every event.
 
 ## Miscellaneous
 
 ### Be wary of scaling through third parties (Very High-1)
 
-You are a hostage of their SLAs
+You are a hostage of their SLAs.
 
-They will not give you special treatment when there's an incident
+They will not give you special treatment when there's an incident.
 
-Be aware of provider lock in
+Be aware of provider lock in.
 
-A team exceptionaly can use a third party feature to speedup implementation, but should keep it as a technical debit
+A team exceptionaly can use a third party feature to speedup implementation, but should keep it as a technical debit.
 
 ### Purge, archive and cost-justify storage (Medium-3)
 
-Match storage cost to data value
-Remove data os value lower than the cost to store it
+Match storage cost to data value.
+
+Remove data with value lower than the cost to store it.
+
 Use RFM: recency, frequency and monetization analisys
 
 ### Partition Inductive, deductive, batch and user interaction (OLTP) workloads (High-2)
 
-Every type of iteractioin deserves its own partition
+Every type of iteraction deserves its own partition.
 
 ### Design your application to be monitored (High-2)
 
 Prepare yourself to answer:
 
-Is there a problem? (business oriented/customer centric metrics)
+* Is there a problem? (business oriented/customer centric metrics).
 
-Where is the problem? (component/service level metrics)
+* Where is the problem? (component/service level metrics)
 
-What is the problem? (low level metrics)
+* What is the problem? (low level metrics)
 
-Why is there a problem? (Posmortem)
+* Why is there a problem? (Posmortem)
 
-Will be there a problem? (Last level, prediction)
+* Will be there a problem? (Last level, prediction)
 
 ### Be competent (Very High-1)
 
-Know your tech, or have someone who knows
+Know your tech, or have someone who knows.
 
-Delegation is different from omission
+Delegation is different from omission.
 
-The client doesn't care if it's a supplier mistake, your are ultimatelly responsible
+The client doesn't care if it's a supplier mistake, your are ultimatelly responsible.
 
 
 # Bibliography
