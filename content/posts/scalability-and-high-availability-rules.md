@@ -268,7 +268,7 @@ Use the expire headers to inform the client or the CDN when a content should be 
 
 Split the application to increase the cache hits by business terms, e.g. 80% of the requests occur against 20% of your inventory.
 
-Premium users on their on servers.
+Premium users on their own servers.
 
 ### Leverage object caches (Very High-1)
 
@@ -317,7 +317,7 @@ The cost is low, the risk is high.
 
 Only additive database changes.
 
-Database changes should be scripted and testes, including rollback scripts.
+Database changes should be scripted and tested, including rollback scripts.
 
 Use restricted SQL queries, don't use SELECT * and add column names to UPDATE statements.
 
@@ -335,7 +335,7 @@ Easier to migrate to NoSQL down the road.
 
 Easier to scale.
 
-Business process should not be tied to the product.
+Business processes should not be tied to a single product.
 
 ### Be aware of costly relationships (Medium-3)
 
@@ -351,8 +351,10 @@ A query join can be replaced by a view, a materialized view, a summary table to 
 
 Be aware of implicit locks and explicit ones.
 
-Types of locks: implicit, explicit, row, page, extent, table, database
-Monitor your database to check if the correct lock is being deployed
+Types of locks: implicit, explicit, row, page, extent, table, database.
+
+Monitor your database to check if the correct lock is being deployed.
+
 Employ read-only database nodes, denormalize and split databases.
 
 ### Don't use multiphase commits (High-2)
@@ -393,7 +395,7 @@ Everything fails.
 
 ### Avoid putting systems in series (Medium-3)
 
-Elements in series have a multiplicative effect of failure.
+Elements in series have a multiplicative effect on your probability of failure.
 
 Don't ignore network elements.
 
@@ -417,7 +419,7 @@ Careful with sidejacking, trasfer an authorization cookie using https for exampl
 
 ### Make use of a distributed cache for states (High-2)
 
-Don't implement systems that require affinity to serve to function properly.
+Don't implement systems that require affinity to function properly.
 
 Don't use state or session replication to create duplicates of data on different systems.
 
