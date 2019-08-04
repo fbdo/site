@@ -21,7 +21,7 @@ uglyURLs = true
 [params]
     author = "Fabio Oliveira"
     description = "Fabio Oliveira's personal website"
-    keywords = "blog,developer,personal,software,cloud,agile,devops"
+    keywords = "freelancer,architect,blog,developer,personal,software,cloud,agile,devops"
     info = "Solution Architect, Cloud, Agile Coach, DevOps, Polyglot Software Engineer and everything else..."
     avatarurl = "images/fabio.jpeg"
     footercontent = "Not always right, but always learning"
@@ -100,5 +100,10 @@ uglyURLs = true
 
         [[languages.en.menu.main]]
         name = "Contact me"
-        weight = 5
+        weight = 4
         url = "https://twitter.com/messages/compose?recipient_id=31106182"
+
+	[[languages.en.menu.main]]
+        name = "GPG Key"
+        weight = 5
+        url = "/gpg/fabio.braga-public.key"
